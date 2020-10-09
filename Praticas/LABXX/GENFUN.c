@@ -46,6 +46,14 @@ void main ()
     printf("Cambio de elemento en la posicion 5\n");
     GENFUN_u8MemSet (&u8Cadena[5],u8Caracter_De_Cambio , 11 );
     printf("Texto con el cambio: %s\n\n", u8Cadena);
+
+    		//COPIANDO INFORMACION
+    uint8 u8Original[23] = "Ingenieria Mecatronica";
+    uint8 u8Copia[23] = "aireinegnI acinortaceM ";
+    printf("\n< Cambiar cadena >\n\n ");
+    printf("\nCadena original: %s \nCadena copia: %s\n\n", u8Original, u8Copia);
+    GENFUN_u8MemCopy ( &u8Original[0], &u8Copia[0], 12);
+    printf("Cadena despues de ser cambiada %s", u8Original);
 }
 
 			//INICIO DE FUNCIONES
@@ -132,4 +140,16 @@ uint8 GENFUN_u8GetAverage ( uint8 *pu8Src, uint8 u8SizeOfList )
 void GENFUN_u8MemSet (uint8 *pu8Src, uint8 u8Char2Set, uint8 u8SizeOfList)
 {
 	*pu8Src = u8Char2Set;
+}
+
+void GENFUN_u8MemCopy (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
+{
+	while ( u8SizeOfList != 0 ) 
+    {
+
+        *pu8Src = *pu8Dest;
+        *pu8Src++;
+        *pu8Dest++;
+        u8SizeOfList--;
+    }
 }
