@@ -53,7 +53,19 @@ void main ()
     printf("\n< Cambiar cadena >\n\n ");
     printf("\nCadena original: %s \nCadena copia: %s\n\n", u8Original, u8Copia);
     GENFUN_u8MemCopy ( &u8Original[0], &u8Copia[0], 12);
-    printf("Cadena despues de ser cambiada %s", u8Original);
+    printf("Cadena despues de ser cambiada %s\n\n", u8Original);
+
+    		//CADENA EN DESORDEN
+    uint8 u8Cadena_Desorden[5] = {5 ,1 ,10, 6 , 3};
+	uint8 u8Cadena_Orden[5] = {0 , 0 , 0 , 0 , 0};
+	uint8 u8array;
+	printf("\n< CADENA EN DESORDEN >\n\n");
+	printf("\nCadena en desorden: ");
+	for (array = 0; array < 5; array ++)
+	{
+		printf("%d ", u8Cadena_Desorden);
+	}
+	for ()
 }
 
 			//INICIO DE FUNCIONES
@@ -144,7 +156,7 @@ void GENFUN_u8MemSet (uint8 *pu8Src, uint8 u8Char2Set, uint8 u8SizeOfList)
 
 void GENFUN_u8MemCopy (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
 {
-	while ( u8SizeOfList != 0 ) 
+	while ( u8SizeOfList > 0 ) 
     {
 
         *pu8Src = *pu8Dest;
@@ -153,3 +165,42 @@ void GENFUN_u8MemCopy (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
         u8SizeOfList--;
     }
 }
+
+void GENFUN_vSortList (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
+{
+	uint8 u8array_1;
+	uint8 u8array_2;
+	uint8 u8Array[5] = {0 , 0 , 0 , 0 , 0};
+	uint8 u8X;
+
+	for (u8array_1 = 0;u8array_1 < 6; u8array_1 ++)
+	{
+		
+	u8Array[u8array_1]= *pu8Src;
+        pu8Src++;
+    }
+    for (u8array_1 = 0;u8array_1 < 6;u8array_1++)
+    {
+    pu8Src--; 
+    
+        for (u8array_1 = 0 ; u8array_1 < 4 ; u8array_1 ++) 
+        {
+            for ( u8array_2 = u8array_1 + 1; u8array_2 < 5 ; u8array_2 ++) 
+            {
+
+                if (u8Array[u8array_1] > u8Array[u8array_2]) 
+                {
+                    u8X = u8Array[u8array_1];
+                    u8Array[u8array_1] = u8Array[u8array_2];
+                    u8Array[u8array_2] = u8X;
+
+                }
+            }
+        }
+    }
+    for (i=0;i<5;i++) 
+    {
+        *pu8Dest=u8Array[u8array_1];
+        *pu8Dest++;
+    }
+} 
