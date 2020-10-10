@@ -50,7 +50,7 @@ void main ()
     		//COPIANDO INFORMACION
     uint8 u8Original[23] = "Ingenieria Mecatronica";
     uint8 u8Copia[23] = "aireinegnI acinortaceM ";
-    printf("\n< Cambiar cadena >\n\n ");
+    printf("\n< CAMBIAR INFORMACION >\n\n ");
     printf("\nCadena original: %s \nCadena copia: %s\n\n", u8Original, u8Copia);
     GENFUN_u8MemCopy ( &u8Original[0], &u8Copia[0], 12);
     printf("Cadena despues de ser cambiada %s\n\n", u8Original);

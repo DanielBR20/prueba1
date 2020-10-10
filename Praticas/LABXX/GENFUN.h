@@ -1,3 +1,4 @@
+//DEFINICIONES
 
 //DataTypes
 typedef unsigned char uint8;
