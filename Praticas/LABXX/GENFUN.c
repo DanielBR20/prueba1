@@ -61,11 +61,14 @@ void main ()
 	uint8 u8array;
 	printf("\n< CADENA EN DESORDEN >\n\n");
 	printf("\nCadena en desorden: ");
-	for (array = 0; array < 5; array ++)
+	for (u8array = 0; u8array < 5; u8array ++)
 	{
-		printf("%d ", u8Cadena_Desorden);
+		printf("%d ", u8Cadena_Desorden[u8array]);
 	}
-	for ()
+	GENFUN_vSortList ( &u8Cadena_Desorden[0], &u8Cadena_Orden[0], 5);
+    printf("\n\nCadena Ordenada\n\n");
+    for (u8array = 0; u8array < 5; u8array++)
+    printf("  %d  ", u8Cadena_Orden[u8array]);
 }
 
 			//INICIO DE FUNCIONES
@@ -198,7 +201,7 @@ void GENFUN_vSortList (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
             }
         }
     }
-    for (i=0;i<5;i++) 
+    for (u8array_1 = 0; u8array_1 < 5; u8array_1++) 
     {
         *pu8Dest=u8Array[u8array_1];
         *pu8Dest++;
